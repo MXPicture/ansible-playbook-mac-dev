@@ -4,6 +4,7 @@
       "path": "."
     },
     {
+      "name": "setup",
       "path": "../../../Setup/ansible-playbook-mac-dev"
     }
   ],
