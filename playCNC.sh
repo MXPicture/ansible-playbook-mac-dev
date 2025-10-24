@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook main.yml --ask-become-pass --extra-vars "config=cnc" -i inventory-cnc
+ansible-playbook main.yml --ask-become-pass --extra-vars "config=cnc" -i configs/mac/inventory-cnc
