@@ -4,3 +4,6 @@
 *.retry
 roles*
 config.yml
+config-*.yml
+inventory-*
+.env
