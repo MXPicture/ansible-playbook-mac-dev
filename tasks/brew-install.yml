@@ -6,9 +6,9 @@
   become: "{{ (homebrew_user != ansible_user_id) | bool }}"
   become_user: "{{ homebrew_user }}"
   block:
-    - name: Force update brew after installation.
-      command: "{{ homebrew_brew_bin_path }}/brew update --force"
-      when: not pre_installed_brew.stat.exists
+    # - name: Force update brew after installation.
+    #   command: "{{ homebrew_brew_bin_path }}/brew update --force"
+    #   when: not pre_installed_brew.stat.exists
 
     - name: Where is the cache?
       command: "{{ homebrew_brew_bin_path }}/brew --cache"
