@@ -15,7 +15,7 @@
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
-      when: not homebrew_use_custom_install
+      when: not (homebrew_use_custom_install | bool)
       tags: ['homebrew']
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
@@ -28,9 +28,8 @@
       tags: ['dock']
 
   tasks:
-  
     - import_tasks: tasks/brew-install.yml
-      when: homebrew_use_custom_install
+      when: homebrew_use_custom_install | bool
       tags: ['homebrew_custom_install']
   
     - import_tasks: tasks/sudoers.yml
