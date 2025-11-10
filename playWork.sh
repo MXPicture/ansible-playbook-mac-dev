@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook main.yml --ask-become-pass --extra-vars "config=work" -i configs/mac/inventory-work
+ansible-playbook main.yml --extra-vars "config=work" -i configs/mac/inventory-work
