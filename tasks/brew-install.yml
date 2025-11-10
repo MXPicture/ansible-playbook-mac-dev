@@ -3,12 +3,12 @@
   set_fact:
     homebrew_user: '{{ homebrew_user | default(ansible_user_id) }}'
     homebrew_group: '{{ homebrew_group | default(ansible_user_gid) }}'
-    
+
 # Install brew packages (extracted from mas.homebrew --> in case of no sudo permission)
 - name: Perform brew installation.
   # Privilege escalation is only required for inner steps when
   # the `homebrew_user` doesn't match the `ansible_user_id`
-  become: "{{ (homebrew_user != ansible_user_id) | bool }}"
+  become: false
   become_user: "{{ homebrew_user }}"
   block:
     # - name: Force update brew after installation.
