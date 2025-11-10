@@ -1,4 +1,9 @@
 ---
+- name: Determine Homebrew ownership variables
+  set_fact:
+    homebrew_user: '{{ homebrew_user | default(ansible_user_id) }}'
+    homebrew_group: '{{ homebrew_group | default(ansible_user_gid) }}'
+    
 # Install brew packages (extracted from mas.homebrew --> in case of no sudo permission)
 - name: Perform brew installation.
   # Privilege escalation is only required for inner steps when
