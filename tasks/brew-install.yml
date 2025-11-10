@@ -10,11 +10,11 @@
     #   command: "{{ homebrew_brew_bin_path }}/brew update --force"
     #   when: not pre_installed_brew.stat.exists
 
-    - name: Where is the cache?
-      command: "{{ homebrew_brew_bin_path }}/brew --cache"
-      register: homebrew_cache_path
-      changed_when: false
-      check_mode: false
+    # - name: Where is the cache?
+    #   command: "{{ homebrew_brew_bin_path }}/brew --cache"
+    #   register: homebrew_cache_path
+    #   changed_when: false
+    #   check_mode: false
 
     # Tap.
     - name: Ensure configured taps are tapped.
